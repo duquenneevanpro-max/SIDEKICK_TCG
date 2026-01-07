@@ -9,44 +9,94 @@
 </head>
 <body>
 
-<header class="hero">
+<!-- Menu sticky -->
+<header class="menu-sticky">
+  <nav>
+    <ul>
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#precommandes">Précommandes</a></li>
+      <li><a href="#stock">Stock</a></li>
+      <li><a href="#nouveautes">Nouveautés</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero / Accueil -->
+<section id="hero" class="hero">
   <h1>SIDEKICK TCG</h1>
   <p>Précommandes et ventes Pokémon TCG pour tous les collectionneurs</p>
   <div class="buttons">
     <a href="#precommandes">Précommandes</a>
     <a href="#stock" class="outline">Stock disponible</a>
   </div>
-</header>
+</section>
 
-<section id="precommandes">
+<!-- Précommandes -->
+<section id="precommandes" class="section-light">
   <h2>Précommandes</h2>
-  <p>Réservez dès maintenant les prochaines extensions Pokémon TCG et soyez les premiers à obtenir les cartes rares !</p>
+  <div class="cards">
+    <div class="card">
+      <img src="images/extension1.jpg" alt="Extension Pokémon 1">
+      <p>Réservez dès maintenant l’extension XYZ !</p>
+      <button>Réserver maintenant</button>
+    </div>
+    <div class="card">
+      <img src="images/extension2.jpg" alt="Extension Pokémon 2">
+      <p>Ne ratez pas les cartes rares de cette extension !</p>
+      <button>Réserver maintenant</button>
+    </div>
+  </div>
 </section>
 
-<section id="stock" class="dark">
+<!-- Stock disponible -->
+<section id="stock" class="section-light">
   <h2>Stock disponible</h2>
-  <ul class="products">
-    <li>Boosters Pokémon officiels</li>
-    <li>ETB scellées</li>
-    <li>Displays collectors</li>
-    <li>Cartes rares et promo</li>
-  </ul>
+  <div class="cards">
+    <div class="card">
+      <img src="images/booster.jpg" alt="Booster Pokémon">
+      <p>Boosters officiels Pokémon</p>
+      <button>Ajouter au panier</button>
+    </div>
+    <div class="card">
+      <img src="images/etb.jpg" alt="ETB Pokémon">
+      <p>ETB scellées Pokémon</p>
+      <button>Ajouter au panier</button>
+    </div>
+    <div class="card">
+      <img src="images/display.jpg" alt="Display Pokémon">
+      <p>Displays collectors Pokémon</p>
+      <button>Ajouter au panier</button>
+    </div>
+  </div>
 </section>
 
-<section id="nouveautes">
+<!-- Nouveautés -->
+<section id="nouveautes" class="section-light">
   <h2>Nouveautés</h2>
   <p>Découvrez les derniers arrivages et nos produits les plus recherchés par les collectionneurs.</p>
+  <div class="cards">
+    <div class="card">
+      <img src="images/nouveaute1.jpg" alt="Nouvelle carte 1">
+    </div>
+    <div class="card">
+      <img src="images/nouveaute2.jpg" alt="Nouvelle carte 2">
+    </div>
+  </div>
 </section>
 
-<section id="apropos" class="dark">
+<!-- À propos -->
+<section id="apropos" class="section-light">
   <h2>À propos</h2>
   <p>
-    Chez SIDEKICK TCG, nous sommes passionnés par Pokémon TCG et nous sélectionnons chaque produit avec soin.
-    Notre objectif : proposer un service premium, fiable et adapté à tous les fans et collectionneurs.
+    Chez SIDEKICK TCG, nous sommes passionnés par Pokémon TCG et sélectionnons chaque produit avec soin.
+    Notre objectif : offrir un service premium, fiable et adapté à tous les collectionneurs.
   </p>
 </section>
 
-<section id="contact">
+<!-- Contact -->
+<section id="contact" class="section-light">
   <h2>Contact</h2>
   <form>
     <input type="text" placeholder="Nom" required>
@@ -57,6 +107,7 @@
   <p class="social">Suivez-nous : <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">Discord</a></p>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>© 2026 SIDEKICK TCG – Tous droits réservés</p>
   <p class="mentions">Mentions légales disponibles sur demande</p>

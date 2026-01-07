@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>SIDEKICK TCG</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>SIDEKICK TCG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,8 +23,8 @@
   </nav>
 </header>
 
-<!-- Hero / Accueil -->
-<section id="hero" class="hero">
+<!-- Hero / Accueil avec parallax -->
+<section id="hero" class="hero parallax">
   <h1>SIDEKICK TCG</h1>
   <p>Précommandes et ventes Pokémon TCG pour tous les collectionneurs</p>
   <div class="buttons">
@@ -33,55 +33,71 @@
   </div>
 </section>
 
-<!-- Précommandes -->
+<!-- Précommandes avec slider -->
 <section id="precommandes" class="section-light">
   <h2>Précommandes</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/extension1.jpg" alt="Extension Pokémon 1">
-      <p>Réservez dès maintenant l’extension XYZ !</p>
-      <button>Réserver maintenant</button>
+  <div class="slider" id="slider-pre">
+    <div class="slides">
+      <div class="slide">
+        <img src="images/extension1.jpg" alt="Extension Pokémon 1">
+        <p>Extension XYZ - Cartes rares incluses</p>
+        <button>Réserver maintenant</button>
+      </div>
+      <div class="slide">
+        <img src="images/extension2.jpg" alt="Extension Pokémon 2">
+        <p>Extension ABC - Précommandez vos boosters</p>
+        <button>Réserver maintenant</button>
+      </div>
+      <div class="slide">
+        <img src="images/extension3.jpg" alt="Extension Pokémon 3">
+        <p>Extension DEF - Edition collector</p>
+        <button>Réserver maintenant</button>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/extension2.jpg" alt="Extension Pokémon 2">
-      <p>Ne ratez pas les cartes rares de cette extension !</p>
-      <button>Réserver maintenant</button>
-    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
 </section>
 
-<!-- Stock disponible -->
+<!-- Stock disponible avec slider -->
 <section id="stock" class="section-light">
   <h2>Stock disponible</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/booster.jpg" alt="Booster Pokémon">
-      <p>Boosters officiels Pokémon</p>
-      <button>Ajouter au panier</button>
+  <div class="slider" id="slider-stock">
+    <div class="slides">
+      <div class="slide">
+        <img src="images/booster.jpg" alt="Booster Pokémon">
+        <p>Boosters officiels Pokémon</p>
+        <button>Ajouter au panier</button>
+      </div>
+      <div class="slide">
+        <img src="images/etb.jpg" alt="ETB Pokémon">
+        <p>ETB scellées Pokémon</p>
+        <button>Ajouter au panier</button>
+      </div>
+      <div class="slide">
+        <img src="images/display.jpg" alt="Display Pokémon">
+        <p>Displays collectors Pokémon</p>
+        <button>Ajouter au panier</button>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/etb.jpg" alt="ETB Pokémon">
-      <p>ETB scellées Pokémon</p>
-      <button>Ajouter au panier</button>
-    </div>
-    <div class="card">
-      <img src="images/display.jpg" alt="Display Pokémon">
-      <p>Displays collectors Pokémon</p>
-      <button>Ajouter au panier</button>
-    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
 </section>
 
-<!-- Nouveautés -->
+<!-- Nouveautés avec hover effect -->
 <section id="nouveautes" class="section-light">
   <h2>Nouveautés</h2>
-  <p>Découvrez les derniers arrivages et nos produits les plus recherchés par les collectionneurs.</p>
+  <p>Découvrez les derniers arrivages et nos produits les plus recherchés.</p>
   <div class="cards">
-    <div class="card">
+    <div class="card hover-glow">
       <img src="images/nouveaute1.jpg" alt="Nouvelle carte 1">
     </div>
-    <div class="card">
+    <div class="card hover-glow">
       <img src="images/nouveaute2.jpg" alt="Nouvelle carte 2">
+    </div>
+    <div class="card hover-glow">
+      <img src="images/nouveaute3.jpg" alt="Nouvelle carte 3">
     </div>
   </div>
 </section>
@@ -90,7 +106,7 @@
 <section id="apropos" class="section-light">
   <h2>À propos</h2>
   <p>
-    Chez SIDEKICK TCG, nous sommes passionnés par Pokémon TCG et sélectionnons chaque produit avec soin.
+    Chez SIDEKICK TCG, nous sélectionnons chaque produit avec soin.
     Notre objectif : offrir un service premium, fiable et adapté à tous les collectionneurs.
   </p>
 </section>
@@ -112,6 +128,41 @@
   <p>© 2026 SIDEKICK TCG – Tous droits réservés</p>
   <p class="mentions">Mentions légales disponibles sur demande</p>
 </footer>
+
+<script>
+// Slider JS simple
+function initSlider(sliderId) {
+  const slider = document.getElementById(sliderId);
+  const slides = slider.querySelectorAll('.slide');
+  const prev = slider.querySelector('.prev');
+  const next = slider.querySelector('.next');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((s, idx) => s.style.display = (idx === i ? 'block' : 'none'));
+  }
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  showSlide(index);
+  // Slide automatique
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 5000);
+}
+
+initSlider('slider-pre');
+initSlider('slider-stock');
+</script>
 
 </body>
 </html>

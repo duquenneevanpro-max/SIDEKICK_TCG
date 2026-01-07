@@ -11,21 +11,24 @@ body {
   line-height: 1.6;
 }
 
+/* Hero / Accueil */
 .hero {
   text-align: center;
   padding: 100px 20px;
   background: radial-gradient(circle at top, #1a1a1a, #000);
+  animation: fadeIn 1s ease-in;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: #d4af37;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  margin: 20px 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .buttons a {
@@ -37,6 +40,12 @@ body {
   background: #d4af37;
   border-radius: 30px;
   font-weight: 600;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.buttons a:hover {
+  transform: scale(1.1);
+  background: #f5d36b;
 }
 
 .buttons .outline {
@@ -45,10 +54,17 @@ body {
   border: 2px solid #d4af37;
 }
 
+.buttons .outline:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Sections */
 section {
   padding: 80px 20px;
   max-width: 900px;
   margin: auto;
+  animation: fadeInUp 1s ease-in;
 }
 
 section h2 {
@@ -59,15 +75,22 @@ section h2 {
 
 .dark {
   background: #111;
+  border-radius: 15px;
+  padding: 60px 20px;
+  margin: 40px 0;
 }
 
 .products li {
   margin: 10px 0;
+  list-style-type: square;
+  color: #f5d36b;
 }
 
+/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 form input, form textarea {
@@ -83,12 +106,52 @@ form button {
   padding: 12px;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
 }
 
+form button:hover {
+  transform: scale(1.05);
+  background: #f5d36b;
+}
+
+.social a {
+  color: #d4af37;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: #f5d36b;
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 30px;
   background: #000;
   font-size: 0.9rem;
   color: #aaa;
+  margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .buttons a {
+    padding: 10px 20px;
+  }
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique – SIDEKICK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">SIDEKICK</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="precommandes.html">Précommandes</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Boutique</h1>
+  <section id="produits" class="produits-grid">
+    <!-- Les produits seront insérés ici par JavaScript -->
+  </section>
+
+  <button onclick="commander()" class="btn">Passer la commande</button>
+</main>
+
+<footer>
+  <p>© 2026 SIDEKICK – Cartes Pokémon TCG</p>
+</footer>
+
+<script src="js/produits.js"></script>
+<script src="js/panier.js"></script>
+<script>
+  const container = document.getElementById('produits');
+
+  produits.forEach(p => {
+    if(p.type === 'stock' && p.stock > 0) {
+      const card = document.createElement('div');
+      card.classList.add('feature');
+
+      card.innerHTML = `
+        <h3>${p.nom}</h3>
+        <p>Prix : ${p.prix} €</p>
+        <p>Stock : ${p.stock}</p>
+        <button onclick="ajouterAuPanier(${p.id})">Ajouter au panier</button>
+      `;
+      container.appendChild(card);
+    }
+  });
+</script>
+
+</body>
+</html>

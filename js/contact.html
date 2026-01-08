@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – SIDEKICK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">SIDEKICK</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="precommandes.html">Précommandes</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Contact</h1>
+  <p>Vous pouvez nous envoyer un message ou nous contacter directement par email ou WhatsApp.</p>
+
+  <section class="contact-methods">
+    <div class="feature">
+      <h3>Email</h3>
+      <p><a href="mailto:contact@sidekick-tcg.fr">contact@sidekick-tcg.fr</a></p>
+    </div>
+
+    <div class="feature">
+      <h3>WhatsApp</h3>
+      <p><a href="https://wa.me/33600000000" target="_blank">Cliquez ici pour nous écrire</a></p>
+    </div>
+
+    <div class="feature">
+      <h3>Formulaire rapide</h3>
+      <form onsubmit="alert('Merci pour votre message !'); return false;">
+        <input type="text" placeholder="Nom" required><br><br>
+        <input type="email" placeholder="Email" required><br><br>
+        <textarea placeholder="Votre message" required></textarea><br><br>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 SIDEKICK – Cartes Pokémon TCG</p>
+</footer>
+
+</body>
+</html>

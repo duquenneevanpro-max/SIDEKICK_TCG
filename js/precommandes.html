@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Précommandes – SIDEKICK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">SIDEKICK</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="precommandes.html">Précommandes</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Précommandes</h1>
+  <section id="precommandes" class="produits-grid">
+    <!-- Les précommandes seront insérées ici par JavaScript -->
+  </section>
+
+  <button onclick="commander()" class="btn">Passer la commande</button>
+</main>
+
+<footer>
+  <p>© 2026 SIDEKICK – Cartes Pokémon TCG</p>
+</footer>
+
+<script src="js/produits.js"></script>
+<script src="js/panier.js"></script>
+<script>
+  const containerPre = document.getElementById('precommandes');
+
+  produits.forEach(p => {
+    if(p.type === 'precommande') {
+      const card = document.createElement('div');
+      card.classList.add('feature');
+
+      card.innerHTML = `
+        <h3>${p.nom}</h3>
+        <p>Prix : ${p.prix} €</p>
+        <p>Disponibilité : ${p.sortie}</p>
+        <button onclick="ajouterAuPanier(${p.id})">Ajouter au panier</button>
+      `;
+      containerPre.appendChild(card);
+    }
+  });
+</script>
+
+</body>
+</html>
